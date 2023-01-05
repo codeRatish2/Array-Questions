@@ -3,7 +3,7 @@ const order = [{
         totalAmount: 1224,
         customerName:"shivam",
         customerId:044,
-        customerCity: "Nagpur",
+        customerCity: "Alibag",
     },
     {   orderId: 24,
         totalAmount: 1345,
@@ -27,7 +27,7 @@ const order = [{
         totalAmount: 2435,
         customerName:"Akshay",
         customerId:047,
-        customerCity: "Pune",
+        customerCity: "Alibag",
     },
     {   orderId: 28,
         totalAmount: 2446,
@@ -46,36 +46,26 @@ for(i=0; order[i]!= undefined;i++){
     cities.push(order[i].customerCity)
 }
 
-  var mostOrderedCity ="";
-  for(i=0; cities[i]!= undefined; i++){
-     for(j = 1; i !=j; j++)
-    if(cities[i] === cities[j]){
-        mostOrderedCity.push(cities[i]);
+var mostOrderedCity ;
+var x = 1;
+var maxcount = 0;
+ for(var i =1; i < cities.length; i++){
+    for(var j=0; j < i; j++){
+        if(cities[i] == cities[j])
+            maxcount++;
+          if(x < maxcount){
+            x = maxcount;
+              mostOrderedCity = cities[i];  
+          }  
+    
+
+     
     }
-  }  
-
-
-  
-
-
-
-
-
-//   for (var i=0; i<arr1.length; i++)
-//   {
-//           for (var j=i; j<arr1.length; j++)
-//           {
-//                   if (arr1[i] == arr1[j])
-//                    m++;
-//                   if (mf<m)
-//                   {
-//                     mf=m; 
-//                     item = arr1[i];
-//                   }
-//           }
-
-
-
+    maxcount = 0;
+}
+    
+  console.log(mostOrderedCity);
+     
 
 
 
